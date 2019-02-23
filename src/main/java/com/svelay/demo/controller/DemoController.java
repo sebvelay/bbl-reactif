@@ -35,4 +35,16 @@ public class DemoController {
                 .delayElements(Duration.ofSeconds(1));
     }
 
+    @GetMapping(value = "/merge", produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
+    public Mono<Message> getMerge() {
+        return demoService.getMessage()
+                .zipWith(demoService.getId())
+                .map(t ->
+                        Message.builder()
+                                .message(t.getT1())
+                                .index(t.getT2())
+                                .build()
+                );
+    }
+
 }
