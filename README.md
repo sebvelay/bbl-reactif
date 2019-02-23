@@ -10,3 +10,4 @@ Just a support for my presentation about spring webflux
 * step 3 : controller for infinite flux with delays
 * step 4 : apply map on flux
 * step 5 : prepare for zip
+* step 6 : zip two mono
