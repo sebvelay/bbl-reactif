@@ -25,9 +25,13 @@ public class DemoController {
     }
 
     @GetMapping(value = "/infinite", produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
-    public Flux<Message> getInfinite(){
+    public Flux<Message> getInfinite() {
 
         return demoService.generateInfinteFlux()
+                .map(m -> {
+                    m.setMessage("Hello les super z");
+                    return m;
+                })
                 .delayElements(Duration.ofSeconds(1));
     }
 
