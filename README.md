@@ -6,3 +6,5 @@ Just a support for my presentation about spring webflux
 
 * master : simple web app
 * step 1 : simple webflux app
+* step 2 : service to stream infinite flux
+* step 3 : controller for infinite flux with delays
